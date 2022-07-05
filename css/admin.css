@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+.logo{
+
+    width: 8em;
+    margin: 2em;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 200px 80vw;
+    
+}
+.nav-container{
+    background-color: #FCEF53;
+    height: 100vh;
+    
+}
+li{
+    list-style: none;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+}
+.nav-icon{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.nav-icon :hover{
+}
+.nav-icon img{
+    width: 2em;
+    height: 2em;
+    margin-right:1.5em;
+}
+nav li{
+    margin: 2em 0;
+    font-weight: 400;
+}
+
+nav li .active::after{
+    content: "";
+    display: block;
+    width: auto;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #5428e9;
+}
+
+a{
+    text-decoration: none;
+}
+
+.form-box{
+    margin: 10em auto;
+    width: fit-content;
+    box-shadow: 1px 1px 8px #888888;
+    padding: 2em;
+    border-radius: 10px;
+    
+}
+
+.shadow{
+    box-shadow: 1px 1px 8px #888888;
+}
+.form-container{
+    margin: 1em 0;
+}
+.form-box h4 {
+    width: 100%;
+    text-align: center;
+
+}
+input,select,textarea{
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 0.4em 0.6em;
+    background-color: rgba(100, 99, 92, 0.1);
+    margin: 0.5em 0;
+    
+}
+textarea::placeholder{
+    font-size: 0.85em;
+    margin-top: 1em;
+}
+textarea{
+    height: 76px;
+}
+label{
+    font-size: smaller;
+}
+
+input:focus,select :focus{
+border: 1.4px solid grey;
+}
+input[type="submit"]{
+    background-color: #FCEF53;
+}
+.sub-lists{
+    margin: 1em auto;
+    width: fit-content;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+.sub-lists li{
+    margin: 0.8em 0 ;
+    list-style: circle;
+}
+.products-table{
+    padding: 1.2em;
+    margin: 2.4em;
+}
+table{
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px;
+}
+tr{
+    width: 30%;
+    
+}
+
+tbody tr{
+    height: 50px;
+    font-size: small;
+}
+th{
+    text-align: start;
+    font-weight: 500;
+}
+
+thead {
+    font-weight: 600;
+    font-size: small;
+}
+table img{
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+}
+
+tbody .icons i {
+    font-size: 1.2em;
+    margin: 0 0.6em ;
+    cursor: pointer;
+    color: gray;
+    
+}
+
+tbody .icons i:hover{
+    color: #5428e9;
+}
+
+.tbl-product-name{
+    font-weight: 500;
+}
+.caption{
+    color: gray;
+}
+.tbl-product-id{
+    font-weight: 400;
+    color: #606060;
+}
+.orders-table{
+    margin: 1.2em;
+    padding: 1.2em;
+}
