@@ -38,16 +38,16 @@ nav{
 
 }
 
-.nav-icon :hover{
-}
+
 .nav-icon img{
-    width: 2em;
-    height: 2em;
+    width: 1.5em;
+    height: 1.5em;
     margin-right:1.5em;
 }
 nav li{
     margin: 2em 0;
     font-weight: 400;
+    font-size: 0.9em;
 }
 
 nav li .active::after{

@@ -3,12 +3,14 @@
 
     <nav>
         <ul>
+            <a href="products.php">
             <li>
                 <div class="nav-icon">
                     <img src="../assets/icons/products.svg" alt="products">
                     <p>Products</p>
                 </div>
             </li>
+            </a>
             <li>
                 <div class="nav-icon">
                     <img src="../assets/icons/categories.svg" alt="categores">
@@ -25,6 +27,17 @@
                         <img src="../assets/icons/orders.svg" alt="orders">
 
                         <p>Orders</p>
+
+                    </div>
+                </li>
+            </a>
+            <a href="view_users.php">
+                <li>
+
+                    <div class="nav-icon">
+                        <img src="../assets/icons/users.svg" alt="orders">
+
+                        <p>Users</p>
 
                     </div>
                 </li>

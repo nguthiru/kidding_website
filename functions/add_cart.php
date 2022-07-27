@@ -32,6 +32,7 @@ function addCart($id)
     else{
         $sql = "INSERT INTO tbl_order(customer_id,order_status) VALUES($user_id,1)";
         $result = mysqli_query($con,$sql);
+        // echo mysqli_error($con);
         $orderID = mysqli_insert_id($con);
         addProduct($id,$orderID);
         header("Location:../cart.php");

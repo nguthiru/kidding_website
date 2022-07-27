@@ -9,12 +9,14 @@ if (isset($_POST['register'])) {
     $pass1 = $_POST['Password'];
     $pass2 = $_POST['Password2'];
     $username = $_POST['Username'];
-    $gender = $_POST['gender'];
+    // $gender = $_POST['gender'];
     if (strcmp($pass1,$pass2) == 0) {
         $pass_hash = md5(($pass1));
-        $sql = "INSERT INTO tbl_users(username,password,email,phone,gender) VALUES ('$username','$pass_hash','$email','$phone','$gender');";
+        $sql = "INSERT INTO tbl_users(username,password,email,phone) VALUES ('$username','$pass_hash','$email','$phone');";
 
         $result = mysqli_query($con, $sql);
+
+        // echo $result;
         echo mysqli_error($con);
         header('Location: login.php');
     }

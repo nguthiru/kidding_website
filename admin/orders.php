@@ -41,6 +41,7 @@
                         $customer = $row['username'];
                         $product = $row['product_name'];
                         $quantity = $row['order_quantity'];
+                        $subtotal = $quantity * $row['unit_price'];
                         $amount = $row['order_amount'];
                         echo "
                         <tr>
@@ -50,7 +51,7 @@
                         <td><img src='.$pro_img'></td>
                         <td class='tbl-product-name'>$product</td>
                         <td class='caption'>$quantity</td>
-                        <td>$amount/=</td>
+                        <td>$subtotal/=</td>
                         
                     </tr>
                         ";

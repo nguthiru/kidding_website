@@ -26,7 +26,6 @@
                         $username = strtoupper($_SESSION['username']);
                         echo " <img src='./assets/icons/account.svg' alt=''>
                             <p> $username</p>";
-                    
                     } else {
                         echo "<a href='login.php'><p>Login</p></a>";
                     }
@@ -34,8 +33,10 @@
                     ?>
                 </div>
             </li>
+            <li>
+
                 <?php
-                if(isset($_SESSION['user_id'])){
+                if (isset($_SESSION['user_id'])) {
                     echo "            <li>
                     <div class='nav-icon'>
                         <img src='./assets/icons/logout.svg' alt=''>
@@ -46,6 +47,25 @@
                 </li>";
                 }
                 ?>
+
+            </li>
+            <li>
+
+                <?php
+                
+                if (isset($_SESSION['isadmin']) and  $_SESSION['isadmin']==1) {
+                    echo "            <li>
+                    <div class='nav-icon'>
+                        <img src='./assets/icons/time.svg' alt=''>
+
+                        <a href='admin/orders.php'><p>Admin</p></a>
+
+                    </div>
+                </li>";
+                }
+                ?>
+
+            </li>
 
         </ul>
     </nav>

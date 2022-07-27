@@ -16,7 +16,14 @@ if (isset($_POST['login'])) {
         $_SESSION['user_id'] = $details['user_id'];
         $_SESSION['email'] = $details['email'];
         $_SESSION['username'] = $details['username'];
-        header("Location: home.php");
+        $_SESSION['isadmin'] = $details['is_admin'];
+   
+            header("Location: home.php");
+
+        
+        // else{
+        //     header("Location:admin/orders.php");
+        // }
     }
 }
 

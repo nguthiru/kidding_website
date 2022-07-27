@@ -52,15 +52,22 @@ if (isset($_POST['delete'])) {
             </thead>
             <tbody>
                 <?php
+
+                if (!isset($_SESSION['user_id'])) {
+                    header("Location:login.php");
+                }
                 $user_id = $_SESSION['user_id'];
+
 
                 $sql = "SELECT * FROM tbl_orderdetails INNER JOIN tbl_product ON tbl_orderdetails.product_id=tbl_product.product_id INNER JOIN tbl_order ON tbl_orderdetails.order_id=tbl_order.order_id WHERE order_status=1";
                 $result = mysqli_query($con, $sql);
                 $counter = 0;
                 $total = 0;
+                $orderID = null;
 
                 while ($row = mysqli_fetch_assoc($result)) {
                     $counter2 = $counter++;
+                    $orderID = $row['order_id'];
 
                     $cart_image = $row['product_image'];
                     $cart_name = $row['product_name'];
@@ -82,7 +89,6 @@ if (isset($_POST['delete'])) {
                             <form action='cart.php' method='post'>
                                 <input type='hidden' value='$product_id' name='product_id'>
                                 <input type='text' name='quantity' class='searchbox' value='$quantity'>
-                                <button type='submit'>Update</button>
                             </form>
                         </div>
                     </td>
@@ -91,7 +97,7 @@ if (isset($_POST['delete'])) {
                     <div class='update-quantity'>
                         <form action='cart.php' method='post'>
                             <input type='hidden' value='$product_id' name='product_id'>
-                            <button type='submit' name='delete' class='warning-btn'>Remove</button>
+                        <button type='submit' name='delete' class='warning-btn'>Remove</button>
                         </form>
                     </div>
                 </td>
@@ -111,8 +117,14 @@ if (isset($_POST['delete'])) {
 
         ?>
 
-        <a href="./checkout.php"><button class='primary-btn' id='checkout-btn'>Proceed to checkout</button></a>
+            <form action='checkout.php' method='POST'>
+                <?php
+                echo "<input type='hidden' value='$orderID' name='order_id'>";
+                echo "<input type='hidden' value='$total' name='total'>";
 
+                ?>
+                <button class='primary-btn' id='checkout-btn' type='submit'>Proceed to checkout</button>
+        </form>
     </main>
 </body>
 
